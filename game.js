@@ -1,7 +1,7 @@
 let snake;
 let rez = 100;
 let foods = [];
-const NUM_FOOD = 3;
+const NUM_FOOD = 5;
 let w;
 let h;
 let foodImg;
