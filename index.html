@@ -31,14 +31,14 @@
         canvasWrapper.style.display = 'flex';
         if (typeof loop === 'function') {
           loop();
-          redraw();
+          if (typeof redraw === 'function') redraw();
         }
       }
     }
 
-    window.addEventListener('resize', checkOrientation);
-    window.addEventListener('orientationchange', checkOrientation);
-    window.addEventListener('load', checkOrientation);
+    window.addEventListener('resize', () => setTimeout(checkOrientation, 100));
+    window.addEventListener('orientationchange', () => setTimeout(checkOrientation, 100));
+    window.addEventListener('load', () => setTimeout(checkOrientation, 100));
   </script>
 </body>
 </html>
