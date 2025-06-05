@@ -41,8 +41,7 @@ function setup() {
   frameRate(8);
   snake = new Snake();
   generateFoods();
-
-  if (!juegoIniciado) noLoop(); // ← importante
+  noLoop();
 }
 
 function generateFoods() {

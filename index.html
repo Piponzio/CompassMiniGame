@@ -1,44 +1,20 @@
+@ -0,0 +1,19 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Compass MiniGame</title>
   <link rel="stylesheet" href="style.css" />
+  <script src="libs/p5.min.js"></script>
+<script src="game.js" defer></script>
 </head>
 <body>
-  <div id="canvas-wrapper"></div>
-
-  <div id="rotate-message" style="display: none;">
-    <p>🔄 Por favor, gira tu dispositivo para jugar en horizontal.</p>
+  <div class="background">
+    <div id="canvas-wrapper" class="canvas-box">
+      <!-- Canvas inyectado por p5.js -->
+    </div>
   </div>
-
-  <script src="p5.min.js"></script>
-  <script src="game.js"></script>
-
-  <script>
-    function checkOrientation() {
-      const isPortrait = window.innerHeight > window.innerWidth;
-      const message = document.getElementById('rotate-message');
-      const canvasWrapper = document.getElementById('canvas-wrapper');
-
-      if (isPortrait) {
-        message.style.display = 'flex';
-        canvasWrapper.style.display = 'none';
-        if (typeof noLoop === 'function') noLoop();
-      } else {
-        message.style.display = 'none';
-        canvasWrapper.style.display = 'flex';
-        if (typeof loop === 'function') {
-          loop();
-          if (typeof redraw === 'function') redraw();
-        }
-      }
-    }
-
-    window.addEventListener('resize', () => setTimeout(checkOrientation, 100));
-    window.addEventListener('orientationchange', () => setTimeout(checkOrientation, 100));
-    window.addEventListener('load', () => setTimeout(checkOrientation, 100));
-  </script>
 </body>
 </html>
