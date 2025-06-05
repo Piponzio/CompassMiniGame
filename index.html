@@ -25,9 +25,14 @@
       if (isPortrait) {
         message.style.display = 'flex';
         canvasWrapper.style.display = 'none';
+        if (typeof noLoop === 'function') noLoop();
       } else {
         message.style.display = 'none';
         canvasWrapper.style.display = 'flex';
+        if (typeof loop === 'function') {
+          loop();
+          redraw();
+        }
       }
     }
 
