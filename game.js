@@ -92,7 +92,7 @@ function draw() {
     if (snake.eat(f)) {
       frutasComidas++;
       foods.splice(i, 1);
-      if (frutasComidas < 5) {
+      if (frutasComidas < 3) {
         addFood();
       } else {
         juegoFinalizado = true;
@@ -106,7 +106,7 @@ textSize(0.6);
 textAlign(LEFT, TOP);
 textFont('sans-serif');  // o "Arial", "Helvetica", etc.
 textStyle(BOLD);
-text(`Fresas: ${frutasComidas}/5`, 0.8, 1);
+text(`Fresas: ${frutasComidas}/3`, 0.8, 1);
 
   if (snake.endGame()) {
     print("END GAME");
